@@ -1,0 +1,13 @@
+.menu-item {
+  display: flex;
+  flex-direction: column;
+}
+.menu-header {
+  cursor: pointer;
+}
+.menu-content {
+  display: none;
+}
+.menu-item.expanded .menu-content {
+  display: block;
+}

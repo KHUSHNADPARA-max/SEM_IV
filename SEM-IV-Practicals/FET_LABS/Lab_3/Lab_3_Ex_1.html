@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lab_3</title>
+    <style type="text/css">
+      #welcome-message {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="welcome-message">
+      Welcome! Please Enter Your Information Below:
+    </div>
+
+    <form>
+      <label>Name: <input type="text" id="name"/></label><br/>
+      <label>Age: <input type="text" id="age"/></label><br/>
+      <label>Confirm Age: <input type="checkbox" id="confirm-age"/></label><br/>
+      <button type="button" onclick="checkAge()">Submit</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script type="text/javascript">
+      function checkAge() {
+        // Get the user's name and age from the form
+        var name = document.getElementById("name").value;
+        var age = document.getElementById("age").value;
+        var confirmAge = document.getElementById("confirm-age").checked;
+
+        // Check if the user has confirmed their age
+        if (!confirmAge) {
+          alert("Please Confirm Your Age.");
+          return;
+        }
+
+        // Check if the user is eligible to vote
+        if (age >= 18) {
+          document.getElementById("output").innerHTML =
+            "Welcome " + name + ", You Are Eligible To Vote.";
+        } else {
+          document.getElementById("output").innerHTML =
+            "Welcome " + name + ", You Are Not Yet Eligible To Vote.";
+        }
+      }
+    </script>
+  </body>
+</html>

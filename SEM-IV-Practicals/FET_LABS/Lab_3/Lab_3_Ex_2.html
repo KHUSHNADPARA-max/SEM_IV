@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lab_1_Ex_2</title>
+    <style type="text/css">
+      #output {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <form>
+      <label>Nationality: <input type="text" id="nationality"/></label><br/>
+      <label>Number of vaccines received:<input type="number" id="vaccines"/></label><br/>
+      <button type="button" onclick="checkAccess()">Submit</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script type="text/javascript">
+      function checkAccess() {
+        // Get the user's nationality and number of vaccines from the form
+        var nationality = document.getElementById("nationality").value;
+        var vaccines = document.getElementById("vaccines").value;
+
+        // Check if the user has received at least one vaccine
+        if (vaccines < 1) {
+          document.getElementById("output").innerHTML =
+            "Error: You must have at least one vaccine to enter the portal.";
+        } else {
+          document.getElementById("output").innerHTML =
+            "Welcome " +nationality +" user, you have received " +vaccines +" vaccine(s). You have access to the portal.";
+        }
+      }
+    </script>
+  </body>
+</html>
